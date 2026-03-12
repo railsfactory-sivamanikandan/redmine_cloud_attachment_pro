@@ -152,7 +152,6 @@ module RedmineCloudAttachmentPro
             region: cloud_config['region']
           }
         
-          # Добавляем endpoint и force_path_style, если они указаны в конфиге
           options[:endpoint] = cloud_config['endpoint'] if cloud_config['endpoint'].present?
           options[:force_path_style] = cloud_config['force_path_style'] if cloud_config['force_path_style'].present?
         
