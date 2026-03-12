@@ -146,11 +146,16 @@ module RedmineCloudAttachmentPro
         end
 
         def s3_client
-          @s3_client ||= Aws::S3::Client.new(
+          options = {
             access_key_id: cloud_config['access_key_id'],
             secret_access_key: cloud_config['secret_access_key'],
             region: cloud_config['region']
-          )
+          }
+        
+          options[:endpoint] = cloud_config['endpoint'] if cloud_config['endpoint'].present?
+          options[:force_path_style] = cloud_config['force_path_style'] if cloud_config['force_path_style'].present?
+        
+          @s3_client ||= Aws::S3::Client.new(options)
         end
 
         def s3_bucket

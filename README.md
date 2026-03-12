@@ -35,6 +35,19 @@ production:
 
 ```
 
+🔹 Yandex Object Storage S3 Configuration
+```yaml
+  s3:
+    access_key_id: YOUR_AWS_KEY
+    secret_access_key: YOUR_AWS_SECRET
+    region: your-region
+    bucket: your-bucket-name
+    path: redmine/files
+    endpoint: https://storage.yandexcloud.net
+    force_path_style: true
+
+```
+
 🔹 Google Cloud Storage (GCS) Configuration
 
 ```yaml
@@ -128,4 +141,5 @@ Author
 Maintained by Sivamanikandan, Sedin Technologies Pvt Ltd, Chennai
 
 📄 License
+
 MIT License
